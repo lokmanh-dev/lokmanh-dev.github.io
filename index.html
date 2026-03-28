@@ -1,24 +1,968 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>My CV</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Lokman Hossain — Senior Application Developer. 8+ years. Laravel, Next.js, Vue, React, Flutter. CV & resume." />
+  <title>Lokman Hossain · Senior Application Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <style>
-    body { font-family: Arial; margin: 40px; }
-    h1 { color: #2c3e50; }
+    :root {
+      --bg-deep: #06080f;
+      --bg-card: rgba(15, 20, 35, 0.72);
+      --border: rgba(0, 245, 212, 0.15);
+      --accent: #00f5d4;
+      --accent-dim: rgba(0, 245, 212, 0.12);
+      --accent-2: #a78bfa;
+      --text: #e8ecf4;
+      --text-muted: #8b95a8;
+      --grid: rgba(255, 255, 255, 0.03);
+      --radius: 14px;
+      --font-sans: "Outfit", system-ui, sans-serif;
+      --font-mono: "JetBrains Mono", ui-monospace, monospace;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 1.55;
+      color: var(--text);
+      background: var(--bg-deep);
+      background-image:
+        linear-gradient(135deg, #0a0f1a 0%, #06080f 40%, #0d1525 100%),
+        linear-gradient(var(--grid) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+      background-size: 100% 100%, 48px 48px, 48px 48px;
+      background-attachment: fixed;
+    }
+
+    .glow {
+      position: fixed;
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+      filter: blur(100px);
+      opacity: 0.35;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .glow-1 {
+      top: -120px;
+      right: -80px;
+      background: var(--accent);
+    }
+
+    .glow-2 {
+      bottom: 10%;
+      left: -100px;
+      background: var(--accent-2);
+      opacity: 0.22;
+    }
+
+    .wrap {
+      position: relative;
+      z-index: 1;
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 4rem;
+    }
+
+    .top-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .brand {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.65rem 1.1rem;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      font-weight: 500;
+      text-decoration: none;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+      color: var(--text);
+      cursor: pointer;
+      backdrop-filter: blur(12px);
+      transition: border-color 0.2s, background 0.2s, transform 0.15s;
+    }
+
+    .btn:hover {
+      border-color: var(--accent);
+      background: var(--accent-dim);
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, rgba(0, 245, 212, 0.2), rgba(167, 139, 250, 0.15));
+      border-color: rgba(0, 245, 212, 0.35);
+      color: var(--accent);
+    }
+
+    .btn-primary:hover {
+      color: #fff;
+    }
+
+    .cv-sheet {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem 1.75rem;
+      backdrop-filter: blur(16px);
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+    }
+
+    .hero {
+      display: grid;
+      gap: 1.25rem;
+      padding-bottom: 1.75rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 1.75rem;
+    }
+
+    @media (min-width: 640px) {
+      .hero {
+        grid-template-columns: 1fr auto;
+        align-items: start;
+      }
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(1.85rem, 5vw, 2.35rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+    }
+
+    .hero h1 span {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 0.45em;
+      font-weight: 500;
+      color: var(--accent);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-top: 0.5rem;
+    }
+
+    .tagline {
+      margin: 0.5rem 0 0;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      max-width: 36ch;
+    }
+
+    .avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 20px;
+      object-fit: cover;
+      display: block;
+      flex-shrink: 0;
+      border: 2px solid rgba(0, 245, 212, 0.4);
+      box-shadow: 0 12px 40px rgba(0, 245, 212, 0.25);
+    }
+
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem 1.25rem;
+      margin-top: 1rem;
+    }
+
+    .contact-row a {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+
+    .contact-row a:hover {
+      border-bottom-color: var(--accent);
+    }
+
+    section {
+      margin-bottom: 1.75rem;
+    }
+
+    section:last-child {
+      margin-bottom: 0;
+    }
+
+    h2 {
+      margin: 0 0 1rem;
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent-2);
+    }
+
+    .prose p {
+      margin: 0 0 0.85rem;
+      color: var(--text-muted);
+      font-size: 0.92rem;
+    }
+
+    .prose p:last-child {
+      margin-bottom: 0;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .skill {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      padding: 0.4rem 0.75rem;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+
+    .skill.highlight {
+      border-color: rgba(0, 245, 212, 0.4);
+      background: var(--accent-dim);
+      color: var(--accent);
+    }
+
+    .stack-lede {
+      margin: 0 0 1.35rem;
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      max-width: 68ch;
+    }
+
+    .stack-lede strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .stack-grid {
+      display: grid;
+      gap: 1.35rem;
+    }
+
+    @media (min-width: 560px) {
+      .stack-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .skill-group {
+      padding: 1rem 1rem 1.05rem;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(0, 245, 212, 0.08);
+    }
+
+    .skill-group-title {
+      margin: 0 0 0.65rem;
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent-2);
+    }
+
+    @media (min-width: 560px) {
+      .skill-group--wide {
+        grid-column: 1 / -1;
+      }
+    }
+
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .job {
+      position: relative;
+      padding-left: 1.25rem;
+      border-left: 2px solid rgba(0, 245, 212, 0.25);
+    }
+
+    .job::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 0.35rem;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 12px var(--accent);
+    }
+
+    .job h3 {
+      margin: 0;
+      font-size: 1.05rem;
+      font-weight: 600;
+    }
+
+    .job .meta {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin: 0.25rem 0 0.5rem;
+    }
+
+    .job .company {
+      color: var(--accent);
+    }
+
+    .job p {
+      margin: 0;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    .job .stack {
+      margin-top: 0.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--accent-2);
+    }
+
+    footer.screen-only {
+      text-align: center;
+      margin-top: 2.5rem;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+    }
+
+    .cv-tabs-bar {
+      margin-bottom: 1.25rem;
+    }
+
+    .cv-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      padding: 0.35rem;
+      border-radius: 12px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+      max-width: fit-content;
+    }
+
+    .cv-tab {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      font-weight: 500;
+      padding: 0.55rem 1.15rem;
+      border: none;
+      border-radius: 8px;
+      background: transparent;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: color 0.2s, background 0.2s;
+    }
+
+    .cv-tab:hover {
+      color: var(--text);
+    }
+
+    .cv-tab.is-active {
+      background: var(--accent-dim);
+      color: var(--accent);
+      box-shadow: 0 0 0 1px rgba(0, 245, 212, 0.25);
+    }
+
+    .cv-tab:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    .cv-panel[hidden] {
+      display: none;
+    }
+
+    .job--compact {
+      padding-bottom: 0.85rem;
+      margin-bottom: 0.85rem;
+      border-bottom: 1px solid rgba(0, 245, 212, 0.08);
+    }
+
+    .job--compact:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .job--compact h3 {
+      font-size: 1rem;
+    }
+
+    .job-one-liner {
+      margin: 0.35rem 0 0;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* ——— Print / A4 ——— */
+    @page {
+      size: A4;
+      margin: 14mm 16mm;
+    }
+
+    @media print {
+      /*
+        Colorful, professional print: teal + indigo accents on a soft cool-white base.
+        Turn on “Background graphics” / “Print backgrounds” in the print dialog for full color.
+      */
+      html {
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+      }
+
+      body {
+        background: linear-gradient(180deg, #f0fdfa 0%, #faf5ff 42%, #ffffff 100%) !important;
+        color: #1e293b !important;
+        font-size: 10pt;
+        line-height: 1.45;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+      }
+
+      .no-print,
+      .glow,
+      .top-bar,
+      .cv-tabs-bar,
+      .actions,
+      #btn-pdf,
+      #btn-print,
+      footer.screen-only {
+        display: none !important;
+      }
+
+      button {
+        display: none !important;
+      }
+
+      .cv-panel[hidden] {
+        display: none !important;
+      }
+
+      .cv-panel:not([hidden]) {
+        display: block !important;
+      }
+
+      .wrap {
+        max-width: 100%;
+        padding: 0;
+      }
+
+      .cv-sheet {
+        border: none;
+        box-shadow: none;
+        background: transparent !important;
+        padding: 0;
+        border-radius: 0;
+        backdrop-filter: none;
+      }
+
+      .hero h1 {
+        font-size: 20pt !important;
+        color: #0f172a !important;
+      }
+
+      .hero h1 span {
+        font-size: 9pt !important;
+        color: #0f766e !important;
+        font-weight: 600;
+      }
+
+      .tagline {
+        font-size: 9.5pt !important;
+        color: #475569 !important;
+      }
+
+      .contact-row a,
+      .contact-row span {
+        font-size: 8.5pt !important;
+      }
+
+      .contact-row a {
+        color: #0f766e !important;
+      }
+
+      .contact-row span {
+        color: #64748b !important;
+      }
+
+      h2 {
+        font-size: 8.5pt !important;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #4338ca !important;
+        padding-bottom: 4px;
+        margin-bottom: 0.5rem !important;
+        border-bottom: 1.5pt solid #5eead4;
+      }
+
+      .prose p,
+      .job p {
+        font-size: 9pt !important;
+        color: #334155 !important;
+      }
+
+      .prose strong,
+      .cv-sheet strong {
+        color: #0f172a !important;
+        font-weight: 600;
+      }
+
+      .job h3 {
+        font-size: 11pt !important;
+        color: #0f172a !important;
+      }
+
+      .job .meta {
+        font-size: 8pt !important;
+        color: #64748b !important;
+      }
+
+      .job .stack {
+        font-size: 8pt !important;
+        color: #5b21b6 !important;
+      }
+
+      .job .company {
+        color: #0d9488 !important;
+        font-weight: 600;
+      }
+
+      .job-one-liner {
+        font-size: 8.5pt !important;
+        color: #64748b !important;
+      }
+
+      .skill {
+        font-size: 7pt !important;
+        padding: 0.2rem 0.45rem !important;
+        border: 0.75pt solid #93c5fd !important;
+        background: linear-gradient(180deg, #eff6ff, #dbeafe) !important;
+        color: #1e3a8a !important;
+        border-radius: 5px !important;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+      }
+
+      .skill.highlight {
+        border: 0.75pt solid #2dd4bf !important;
+        background: linear-gradient(135deg, #d1fae5, #e9d5ff) !important;
+        color: #065f46 !important;
+        font-weight: 600;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+      }
+
+      .stack-lede {
+        font-size: 9pt !important;
+        color: #475569 !important;
+        margin-bottom: 0.85rem !important;
+      }
+
+      .stack-lede strong {
+        color: #0f172a !important;
+      }
+
+      .skill-group {
+        border: 0.75pt solid #c4b5fd !important;
+        background: linear-gradient(165deg, rgba(236, 253, 245, 0.9), rgba(245, 243, 255, 0.85)) !important;
+        padding: 0.55rem 0.65rem 0.65rem !important;
+        border-radius: 8px !important;
+        break-inside: avoid;
+        page-break-inside: avoid;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+      }
+
+      .skill-group-title {
+        font-size: 7pt !important;
+        color: #5b21b6 !important;
+        margin-bottom: 0.4rem !important;
+        letter-spacing: 0.14em !important;
+      }
+
+      .stack-grid {
+        gap: 0.65rem !important;
+      }
+
+      section {
+        margin-bottom: 1.1rem !important;
+      }
+
+      .hero {
+        border-bottom: 2pt solid #2dd4bf;
+        margin-bottom: 1rem !important;
+        padding-bottom: 1rem !important;
+      }
+
+      .job {
+        border-left: 2.5pt solid #14b8a6;
+        break-inside: avoid;
+        page-break-inside: avoid;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+      }
+
+      .job::before {
+        background: #6366f1 !important;
+        box-shadow: 0 0 0 1pt #fff, 0 0 5pt rgba(99, 102, 241, 0.45) !important;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+      }
+
+      .avatar {
+        border: 2pt solid #14b8a6 !important;
+        box-shadow: 0 3pt 12pt rgba(20, 184, 166, 0.25) !important;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+      }
+
+      a[href^="http"]::after {
+        content: "";
+      }
+
+      .contact-row a {
+        text-decoration: underline;
+        text-decoration-color: #5eead4;
+      }
+
+      .job--compact {
+        border-bottom-color: rgba(20, 184, 166, 0.2) !important;
+      }
+    }
   </style>
 </head>
 <body>
-  <h1>Your Name</h1>
-  <p><strong>Email:</strong> your@email.com</p>
-  <p><strong>Phone:</strong> 0123456789</p>
+  <div class="glow glow-1" aria-hidden="true"></div>
+  <div class="glow glow-2" aria-hidden="true"></div>
 
-  <h2>Education</h2>
-  <p>Details about your education</p>
+  <div class="wrap">
+    <div class="top-bar no-print">
+      <div class="brand">// portfolio_cv</div>
+      <div class="actions">
+        <button type="button" class="btn btn-primary" id="btn-pdf" title="Save as PDF from the print dialog. If colors look gray, enable “Background graphics” (Chrome) or “Print backgrounds” (Firefox).">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2M6 14h12v8H6z" />
+          </svg>
+          Download PDF
+        </button>
+        <button type="button" class="btn" id="btn-print">Print / Save as PDF</button>
+      </div>
+    </div>
 
-  <h2>Skills</h2>
-  <p>HTML, CSS, JavaScript</p>
+    <div class="cv-tabs-bar no-print">
+      <div class="cv-tabs" role="tablist" aria-label="CV version">
+        <button type="button" class="cv-tab is-active" role="tab" id="tab-short" aria-selected="true" aria-controls="panel-short">Short CV</button>
+        <button type="button" class="cv-tab" role="tab" id="tab-detail" aria-selected="false" aria-controls="panel-detail">Detail CV</button>
+      </div>
+    </div>
 
-  <h2>Experience</h2>
-  <p>Your work experience</p>
+    <main class="cv-sheet" id="cv">
+      <header class="hero">
+        <div>
+          <h1>
+            Lokman Hossain
+            <span>Senior Application Developer · 8+ years</span>
+          </h1>
+          <p class="tagline">
+            Full-stack Laravel · Next.js · Vue / React · Flutter · APIs · Linux &amp; data layer
+          </p>
+          <div class="contact-row">
+            <a href="mailto:techsobuj@gmail.com">techsobuj@gmail.com</a>
+            <a href="tel:+8801303094448">+880&nbsp;1303‑094448</a>
+            <a href="https://github.com/lokmanh-dev" target="_blank" rel="noopener noreferrer">github.com/lokmanh-dev</a>
+            <a href="https://www.linkedin.com/in/lokmanh-dev/" target="_blank" rel="noopener noreferrer">linkedin.com/in/lokmanh-dev</a>
+            <span style="font-family:var(--font-mono);font-size:0.78rem;color:var(--text-muted)">Dhaka, Bangladesh</span>
+          </div>
+        </div>
+        <img
+          class="avatar"
+          src="https://avatars.githubusercontent.com/u/85433904?s=400&amp;u=5d9cdc5d81cb6c908fa1d1364744e54fcac54076&amp;v=4"
+          alt="Lokman Hossain"
+          width="100"
+          height="100"
+          decoding="async"
+        />
+      </header>
+
+      <div id="panel-detail" class="cv-panel" role="tabpanel" aria-labelledby="tab-detail" hidden>
+      <section aria-labelledby="summary-heading">
+        <h2 id="summary-heading">Profile</h2>
+        <div class="prose">
+          <p>
+            Results-driven Application Developer with <strong style="color:var(--text)">8+ years</strong> of experience in web development and Flutter mobile/desktop applications (Jan&nbsp;2018 – present). Strong track record leading development teams, configuring Linux servers, and designing and maintaining databases. Deep expertise in <strong style="color:var(--text)">Laravel</strong>, RESTful APIs, JavaScript, Vue.js, React, <strong style="color:var(--text)">Next.js</strong> (≈2 years at Z&nbsp;IT Solutions), and Flutter.
+          </p>
+          <p>
+            I build modern, responsive web experiences and e-commerce platforms, pairing clean architecture with pragmatic delivery. Problem-solving is at the core of how I work—whether shipping APIs, full-stack Laravel apps, Next.js front ends, or cross-platform Flutter clients.
+          </p>
+        </div>
+      </section>
+
+      <section aria-labelledby="skills-heading">
+        <h2 id="skills-heading">Technical expertise</h2>
+        <p class="stack-lede">
+          I ship <strong>end-to-end products</strong>: robust Laravel backends and APIs, polished <strong>Next.js</strong>, Vue, and React front ends, and Flutter clients when the product needs mobile or desktop. Comfortable owning <strong>architecture, databases, and Linux deployment</strong>—from greenfield builds to scaling existing systems.
+        </p>
+        <div class="stack-grid">
+          <div class="skill-group">
+            <h3 class="skill-group-title">Backend &amp; APIs</h3>
+            <div class="skills">
+              <span class="skill highlight">Laravel</span>
+              <span class="skill highlight">PHP</span>
+              <span class="skill">REST &amp; JSON APIs</span>
+              <span class="skill">MVC &amp; service layers</span>
+              <span class="skill">Eloquent ORM</span>
+              <span class="skill">Auth &amp; permissions</span>
+              <span class="skill">Queues &amp; scheduled jobs</span>
+              <span class="skill">Third-party integrations</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <h3 class="skill-group-title">Frontend &amp; full-stack</h3>
+            <div class="skills">
+              <span class="skill highlight">Next.js</span>
+              <span class="skill highlight">Vue.js</span>
+              <span class="skill highlight">React</span>
+              <span class="skill">Laravel + Vue</span>
+              <span class="skill">Laravel + React</span>
+              <span class="skill">Inertia.js</span>
+              <span class="skill">Blade templates</span>
+              <span class="skill">JavaScript (ES6+)</span>
+              <span class="skill">TypeScript</span>
+              <span class="skill">Responsive UI / UX</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <h3 class="skill-group-title">Mobile &amp; cross-platform</h3>
+            <div class="skills">
+              <span class="skill highlight">Flutter</span>
+              <span class="skill">Dart</span>
+              <span class="skill">Mobile &amp; desktop targets</span>
+              <span class="skill">API-driven apps</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <h3 class="skill-group-title">Data, infra &amp; delivery</h3>
+            <div class="skills">
+              <span class="skill highlight">MySQL</span>
+              <span class="skill">PostgreSQL</span>
+              <span class="skill">Schema design &amp; optimization</span>
+              <span class="skill">Redis / caching</span>
+              <span class="skill">Linux server admin</span>
+              <span class="skill">Nginx / Apache</span>
+              <span class="skill">SSL &amp; deployment</span>
+              <span class="skill">Git &amp; GitHub</span>
+              <span class="skill">PHPUnit &amp; testing</span>
+              <span class="skill">CI/CD</span>
+            </div>
+          </div>
+          <div class="skill-group skill-group--wide">
+            <h3 class="skill-group-title">Leadership &amp; collaboration</h3>
+            <div class="skills">
+              <span class="skill highlight">Technical leadership</span>
+              <span class="skill">Team mentoring</span>
+              <span class="skill">Code review</span>
+              <span class="skill">Requirements → delivery</span>
+              <span class="skill">E-commerce &amp; business apps</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="exp-heading">
+        <h2 id="exp-heading">Experience</h2>
+        <div class="timeline">
+          <article class="job">
+            <h3>Founder &amp; CTO</h3>
+            <p class="meta"><span class="company">BahariSoft IT</span> · Self-employed · Hybrid · Uttara, Dhaka</p>
+            <p class="meta">Jan 2026 – Present</p>
+            <p>Leading product and engineering direction; full-stack delivery and technical strategy.</p>
+          </article>
+          <article class="job">
+            <h3>Senior Application Developer</h3>
+            <p class="meta"><span class="company">Z IT Solutions Limited</span> · Full-time · On-site · Uttara Sector 4, Dhaka</p>
+            <p class="meta">Jun 2021 – Dec 2025 · 4 yrs 7 mos</p>
+            <p>Advanced application development with <strong style="color:var(--text)">Next.js</strong> (≈2 years), Laravel, and Vue; system design, APIs, and Linux-backed deployments.</p>
+            <p class="stack">Next.js · Vue.js · Laravel · Linux · REST APIs · +skills</p>
+          </article>
+          <article class="job">
+            <h3>Laravel Developer</h3>
+            <p class="meta"><span class="company">2RA Technology Ltd</span> · Full-time · On-site · Mirpur DOHS, Dhaka</p>
+            <p class="meta">Mar 2019 – Jun 2021 · 2 yrs 4 mos</p>
+            <p>Laravel-focused backend and full-stack features with modern front ends.</p>
+            <p class="stack">Vue.js · PHP · +13 related skills</p>
+          </article>
+          <article class="job">
+            <h3>Web Developer &amp; Graphic Designer</h3>
+            <p class="meta"><span class="company">SoftAsia BD</span> · Full-time · On-site · Bangladesh Bank More, Rangpur</p>
+            <p class="meta">Jun 2018 – Jan 2019 · 8 mos</p>
+            <p>Web development and visual design for client projects.</p>
+            <p class="stack">PHP · MySQL · +5 related skills</p>
+          </article>
+          <article class="job">
+            <h3>Web Designer</h3>
+            <p class="meta"><span class="company">ZS TECHNOLOGIES LTD</span> · Full-time · On-site · Rangpur Division</p>
+            <p class="meta">Jan 2018 – May 2018 · 5 mos</p>
+            <p>Web design and development foundations.</p>
+            <p class="stack">PHP · MySQL · +1 skill</p>
+          </article>
+        </div>
+      </section>
+      </div>
+
+      <div id="panel-short" class="cv-panel" role="tabpanel" aria-labelledby="tab-short">
+        <section aria-labelledby="summary-heading-short">
+          <h2 id="summary-heading-short">Profile</h2>
+          <div class="prose">
+            <p>
+              Senior developer (8+ yrs): <strong style="color:var(--text)">Laravel</strong> &amp; APIs, <strong style="color:var(--text)">Next.js</strong> (~2 yrs at Z&nbsp;IT), Vue/React, <strong style="color:var(--text)">Flutter</strong>, MySQL/PostgreSQL, Linux. Technical leadership, e‑commerce &amp; business apps.
+            </p>
+          </div>
+        </section>
+
+        <section aria-labelledby="skills-heading-short">
+          <h2 id="skills-heading-short">Skills</h2>
+          <div class="skills">
+            <span class="skill highlight">Laravel</span>
+            <span class="skill highlight">Next.js</span>
+            <span class="skill highlight">PHP</span>
+            <span class="skill highlight">Vue.js</span>
+            <span class="skill highlight">React</span>
+            <span class="skill highlight">Flutter</span>
+            <span class="skill">REST APIs</span>
+            <span class="skill">TypeScript / JS</span>
+            <span class="skill">MySQL · PostgreSQL</span>
+            <span class="skill">Linux · Nginx</span>
+            <span class="skill">Git</span>
+            <span class="skill">Tech leadership</span>
+          </div>
+        </section>
+
+        <section aria-labelledby="exp-heading-short">
+          <h2 id="exp-heading-short">Experience</h2>
+          <div class="timeline">
+            <article class="job job--compact">
+              <h3>Founder &amp; CTO — BahariSoft IT</h3>
+              <p class="meta">Jan 2026 – Present · Dhaka · Hybrid</p>
+              <p class="job-one-liner">Product &amp; engineering leadership; full-stack delivery.</p>
+            </article>
+            <article class="job job--compact">
+              <h3>Senior Application Developer — Z IT Solutions</h3>
+              <p class="meta">Jun 2021 – Dec 2025 (4 yrs 7 mos) · Dhaka</p>
+              <p class="job-one-liner">Next.js, Laravel, Vue; APIs, architecture, Linux operations.</p>
+            </article>
+            <article class="job job--compact">
+              <h3>Laravel Developer — 2RA Technology</h3>
+              <p class="meta">Mar 2019 – Jun 2021 (2 yrs 4 mos) · Dhaka</p>
+              <p class="job-one-liner">Laravel backends, Vue, full-stack features.</p>
+            </article>
+            <article class="job job--compact">
+              <h3>Web Developer &amp; Designer — SoftAsia BD</h3>
+              <p class="meta">Jun 2018 – Jan 2019 · Rangpur</p>
+              <p class="job-one-liner">PHP, MySQL, client web &amp; design work.</p>
+            </article>
+            <article class="job job--compact">
+              <h3>Web Designer — ZS TECHNOLOGIES</h3>
+              <p class="meta">Jan 2018 – May 2018 · Rangpur</p>
+              <p class="job-one-liner">PHP, MySQL, web foundations.</p>
+            </article>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="screen-only">Developed by Lokman Hossain</footer>
+  </div>
+
+  <script>
+    function doPrint() {
+      window.print();
+    }
+    document.getElementById("btn-print").addEventListener("click", doPrint);
+    document.getElementById("btn-pdf").addEventListener("click", doPrint);
+
+    (function () {
+      var tabDetail = document.getElementById("tab-detail");
+      var tabShort = document.getElementById("tab-short");
+      var panelDetail = document.getElementById("panel-detail");
+      var panelShort = document.getElementById("panel-short");
+
+      function showDetail() {
+        tabDetail.classList.add("is-active");
+        tabDetail.setAttribute("aria-selected", "true");
+        tabShort.classList.remove("is-active");
+        tabShort.setAttribute("aria-selected", "false");
+        panelDetail.hidden = false;
+        panelShort.hidden = true;
+      }
+
+      function showShort() {
+        tabShort.classList.add("is-active");
+        tabShort.setAttribute("aria-selected", "true");
+        tabDetail.classList.remove("is-active");
+        tabDetail.setAttribute("aria-selected", "false");
+        panelShort.hidden = false;
+        panelDetail.hidden = true;
+      }
+
+      tabDetail.addEventListener("click", showDetail);
+      tabShort.addEventListener("click", showShort);
+    })();
+  </script>
 </body>
 </html>
