@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Lokman Hossain — Senior Application Developer. 8+ years. Laravel, Next.js, Vue, React, Flutter. CV & resume." />
-  <title>Lokman Hossain · Senior Laravel Developer | API & Full-Stack Specialist (8+ Years)</title>
+  <meta name="description" content="Lokman Hossain — Laravel specialist, 8+ years live production experience. Vue.js, Flutter, PHP, Nuxt, Next.js, React. Portfolio: POS, e‑commerce, billing, VAT, school, park &amp; restaurant." />
+  <title>Lokman Hossain · Laravel Specialist · 8+ Years</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -151,9 +151,9 @@
     .hero {
       display: grid;
       gap: 1.25rem;
-      padding-bottom: 1.75rem;
+      padding: 1.25rem 1.5rem 1.75rem;
+      margin: 0 0 1.75rem;
       border-bottom: 1px solid var(--border);
-      margin-bottom: 1.75rem;
     }
 
     @media (min-width: 640px) {
@@ -186,13 +186,14 @@
       margin: 0.5rem 0 0;
       color: var(--text-muted);
       font-size: 0.95rem;
-      max-width: 36ch;
+      max-width: 52ch;
+      line-height: 1.5;
     }
 
     .avatar {
-      width: 100px;
-      height: 100px;
-      border-radius: 20px;
+      width: 140px;
+      height: 140px;
+      border-radius: 26px;
       object-fit: cover;
       display: block;
       flex-shrink: 0;
@@ -270,7 +271,18 @@
       color: var(--accent);
     }
 
-    .stack-lede {
+    .skill.highlight.skill-priority {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      border-color: rgba(0, 245, 212, 0.7);
+      background: linear-gradient(135deg, rgba(0, 245, 212, 0.22), rgba(167, 139, 250, 0.2));
+      color: #f0fdf9;
+      box-shadow: 0 0 0 1px rgba(0, 245, 212, 0.2), 0 8px 28px rgba(0, 245, 212, 0.12);
+    }
+
+    .stack-lede,
+    .portfolio-lede {
       margin: 0 0 1.35rem;
       font-size: 0.92rem;
       color: var(--text-muted);
@@ -278,9 +290,119 @@
       max-width: 68ch;
     }
 
-    .stack-lede strong {
+    .stack-lede strong,
+    .portfolio-lede strong {
       color: var(--text);
       font-weight: 600;
+    }
+
+    .portfolio-grid {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 1rem;
+    }
+
+    @media (min-width: 560px) {
+      .portfolio-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .portfolio-card {
+      display: flex;
+      gap: 0.9rem;
+      align-items: flex-start;
+      padding: 1rem 1.1rem;
+      border-radius: 12px;
+      border: 1px solid rgba(0, 245, 212, 0.12);
+      background: rgba(255, 255, 255, 0.03);
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .portfolio-card:hover {
+      border-color: rgba(0, 245, 212, 0.28);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .portfolio-accent {
+      flex-shrink: 0;
+      width: 4px;
+      min-height: 2.5rem;
+      border-radius: 4px;
+      background: linear-gradient(180deg, var(--accent), var(--accent-2));
+      margin-top: 0.15rem;
+    }
+
+    .portfolio-card:nth-child(2) .portfolio-accent {
+      background: linear-gradient(180deg, #a78bfa, #818cf8);
+    }
+
+    .portfolio-card:nth-child(3) .portfolio-accent {
+      background: linear-gradient(180deg, #22d3ee, var(--accent));
+    }
+
+    .portfolio-card:nth-child(4) .portfolio-accent {
+      background: linear-gradient(180deg, #f472b6, #a78bfa);
+    }
+
+    .portfolio-card:nth-child(5) .portfolio-accent {
+      background: linear-gradient(180deg, #34d399, #2dd4bf);
+    }
+
+    .portfolio-card:nth-child(6) .portfolio-accent {
+      background: linear-gradient(180deg, #f59e0b, #ea580c);
+    }
+
+    .portfolio-title {
+      margin: 0 0 0.4rem;
+      font-size: 1.02rem;
+      font-weight: 600;
+      color: var(--text);
+      letter-spacing: -0.01em;
+    }
+
+    .portfolio-desc {
+      margin: 0;
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    .portfolio-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: 0.55rem;
+    }
+
+    .portfolio-tag {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.45rem;
+      border-radius: 6px;
+      background: rgba(167, 139, 250, 0.12);
+      border: 1px solid rgba(167, 139, 250, 0.22);
+      color: var(--accent-2);
+    }
+
+    .portfolio-list-short {
+      margin: 0;
+      padding: 0 0 0 1.1rem;
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      line-height: 1.65;
+    }
+
+    .portfolio-list-short li {
+      margin-bottom: 0.35rem;
+    }
+
+    .portfolio-list-short li:last-child {
+      margin-bottom: 0;
     }
 
     .stack-grid {
@@ -452,21 +574,33 @@
     /* ——— Print / A4 ——— */
     @page {
       size: A4;
-      margin: 14mm 16mm;
+      /* Wider quiet zone so content never hugs the physical sheet edge */
+      margin: 20mm 22mm;
     }
 
     @media print {
       /*
-        Colorful, professional print: teal + indigo accents on a soft cool-white base.
-        Turn on “Background graphics” / “Print backgrounds” in the print dialog for full color.
+        Colorful, professional print: teal + indigo accents.
+        Body padding = colored frame; .wrap = white card with inner padding (avoids “color only on text”).
+        Turn on “Background graphics” / “Print backgrounds” for full color.
       */
+      * {
+        box-sizing: border-box;
+      }
+
       html {
+        min-height: 100%;
+        background: linear-gradient(165deg, #e0f2fe 0%, #ecfeff 18%, #f0fdf4 36%, #eef2ff 58%, #faf5ff 78%, #f8fafc 100%) !important;
         print-color-adjust: exact;
         -webkit-print-color-adjust: exact;
       }
 
       body {
-        background: linear-gradient(180deg, #f0fdfa 0%, #faf5ff 42%, #ffffff 100%) !important;
+        margin: 0 !important;
+        /* Outer colored frame: gradient fills padding band around the white CV card */
+        padding: 8mm 10mm 10mm !important;
+        min-height: 100%;
+        background: linear-gradient(165deg, #e0f2fe 0%, #ecfeff 18%, #f0fdf4 36%, #eef2ff 58%, #faf5ff 78%, #f8fafc 100%) !important;
         color: #1e293b !important;
         font-size: 10pt;
         line-height: 1.45;
@@ -499,14 +633,21 @@
 
       .wrap {
         max-width: 100%;
-        padding: 0;
+        /* Extra top/side inset so header text clears the card edge + shadow */
+        padding: 10mm 11mm 9mm !important;
+        background: rgba(255, 255, 255, 0.97) !important;
+        border-radius: 3mm !important;
+        border: 0.75pt solid rgba(148, 163, 184, 0.4) !important;
+        box-shadow: 0 2pt 16pt rgba(15, 23, 42, 0.07) !important;
+        print-color-adjust: exact !important;
+        -webkit-print-color-adjust: exact !important;
       }
 
       .cv-sheet {
         border: none;
         box-shadow: none;
         background: transparent !important;
-        padding: 0;
+        padding: 0 !important;
         border-radius: 0;
         backdrop-filter: none;
       }
@@ -608,14 +749,135 @@
         -webkit-print-color-adjust: exact;
       }
 
+      .skill.highlight.skill-priority {
+        font-size: 7.5pt !important;
+        font-weight: 700 !important;
+        border: 1.25pt solid #0d9488 !important;
+        background: linear-gradient(135deg, #5eead4, #a5b4fc, #c4b5fd) !important;
+        color: #064e3b !important;
+        box-shadow: 0 1pt 5pt rgba(13, 148, 136, 0.22) !important;
+        print-color-adjust: exact !important;
+        -webkit-print-color-adjust: exact !important;
+      }
+
+      .tagline strong:nth-of-type(1),
+      .tagline strong:nth-of-type(3) {
+        color: #0d9488 !important;
+      }
+
+      .tagline strong:nth-of-type(2) {
+        color: #5b21b6 !important;
+      }
+
       .stack-lede {
         font-size: 9pt !important;
         color: #475569 !important;
         margin-bottom: 0.85rem !important;
       }
 
-      .stack-lede strong {
+      .stack-lede strong,
+      .portfolio-lede strong {
         color: #0f172a !important;
+      }
+
+      .portfolio-lede {
+        font-size: 9pt !important;
+        color: #475569 !important;
+        margin-bottom: 0.65rem !important;
+        max-width: none !important;
+      }
+
+      .portfolio-grid {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 0.45rem !important;
+        list-style: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+
+      .portfolio-card {
+        display: flex !important;
+        gap: 0.45rem !important;
+        align-items: flex-start !important;
+        padding: 0.5rem 0.55rem !important;
+        border-radius: 8px !important;
+        border: 0.75pt solid rgba(99, 102, 241, 0.4) !important;
+        background: linear-gradient(145deg, rgba(238, 242, 255, 0.92), rgba(236, 253, 245, 0.88), rgba(250, 245, 255, 0.75)) !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+        print-color-adjust: exact !important;
+        -webkit-print-color-adjust: exact !important;
+      }
+
+      .portfolio-card:nth-child(1) .portfolio-accent {
+        background: linear-gradient(180deg, #14b8a6, #06b6d4) !important;
+      }
+
+      .portfolio-card:nth-child(2) .portfolio-accent {
+        background: linear-gradient(180deg, #8b5cf6, #6366f1) !important;
+      }
+
+      .portfolio-card:nth-child(3) .portfolio-accent {
+        background: linear-gradient(180deg, #0ea5e9, #14b8a6) !important;
+      }
+
+      .portfolio-card:nth-child(4) .portfolio-accent {
+        background: linear-gradient(180deg, #d946ef, #8b5cf6) !important;
+      }
+
+      .portfolio-card:nth-child(5) .portfolio-accent {
+        background: linear-gradient(180deg, #10b981, #2dd4bf) !important;
+      }
+
+      .portfolio-card:nth-child(6) .portfolio-accent {
+        background: linear-gradient(180deg, #f59e0b, #ea580c) !important;
+      }
+
+      .portfolio-accent {
+        width: 3pt !important;
+        min-height: 2rem !important;
+        border-radius: 2px !important;
+        flex-shrink: 0 !important;
+        print-color-adjust: exact !important;
+        -webkit-print-color-adjust: exact !important;
+      }
+
+      .portfolio-title {
+        font-size: 9pt !important;
+        margin: 0 0 0.2rem !important;
+        color: #0f172a !important;
+        font-weight: 700 !important;
+      }
+
+      .portfolio-desc {
+        font-size: 7.5pt !important;
+        color: #475569 !important;
+        line-height: 1.4 !important;
+      }
+
+      .portfolio-tags {
+        margin-top: 0.3rem !important;
+      }
+
+      .portfolio-tag {
+        font-size: 6pt !important;
+        padding: 0.12rem 0.32rem !important;
+        border-radius: 3px !important;
+        border: 0.5pt solid #a5b4fc !important;
+        background: linear-gradient(180deg, #e0e7ff, #ddd6fe) !important;
+        color: #4338ca !important;
+        print-color-adjust: exact !important;
+        -webkit-print-color-adjust: exact !important;
+      }
+
+      .portfolio-list-short {
+        font-size: 8.5pt !important;
+        color: #475569 !important;
+      }
+
+      .portfolio-list-short strong {
+        color: #0d9488 !important;
       }
 
       .skill-group {
@@ -646,8 +908,12 @@
 
       .hero {
         border-bottom: 2pt solid #2dd4bf;
-        margin-bottom: 1rem !important;
-        padding-bottom: 1rem !important;
+        margin: 0 0 1rem !important;
+        /* Inner padding so name & contacts aren’t flush to the white card / shadow */
+        padding: 3mm 2mm 4mm !important;
+        box-shadow: none !important;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
       }
 
       .job {
@@ -666,6 +932,9 @@
       }
 
       .avatar {
+        width: 36mm !important;
+        height: 36mm !important;
+        border-radius: 7mm !important;
         border: 2pt solid #14b8a6 !important;
         box-shadow: 0 3pt 12pt rgba(20, 184, 166, 0.25) !important;
         print-color-adjust: exact;
@@ -707,8 +976,8 @@
 
     <div class="cv-tabs-bar no-print">
       <div class="cv-tabs" role="tablist" aria-label="CV version">
-        <button type="button" class="cv-tab is-active" role="tab" id="tab-short" aria-selected="true" aria-controls="panel-short">Short CV</button>
-        <button type="button" class="cv-tab" role="tab" id="tab-detail" aria-selected="false" aria-controls="panel-detail">Detail CV</button>
+        <button type="button" class="cv-tab is-active" role="tab" id="tab-detail" aria-selected="true" aria-controls="panel-detail">Detail CV</button>
+        <button type="button" class="cv-tab" role="tab" id="tab-short" aria-selected="false" aria-controls="panel-short">Short CV</button>
       </div>
     </div>
 
@@ -717,13 +986,13 @@
         <div>
           <h1>
             Lokman Hossain
-            <span>Senior Laravel Developer | API & Full-Stack Specialist (8+ Years)</span>
+            <span>Laravel specialist · 8+ years live project experience</span>
           </h1>
           <p class="tagline">
-            Full-stack Laravel · Next.js · Vue / React · Flutter · APIs · Linux &amp; data layer
+            <strong style="color:var(--accent);font-weight:600">Laravel</strong>, <strong style="color:var(--accent-2);font-weight:600">Vue.js</strong> &amp; <strong style="color:var(--accent);font-weight:600">Flutter</strong> — plus PHP, Nuxt.js, Next.js, React.js, APIs, Linux &amp; data layer
           </p>
           <div class="contact-row">
-            <a href="mailto:techsobuj@gmail.com">techsobuj@gmail.com</a>
+            <a href="mailto:lokman@baharisoft.com">lokman@baharisoft.com</a>
             <a href="tel:+8801303094448">+880&nbsp;1303‑094448</a>
             <a href="https://github.com/lokmanh-dev" target="_blank" rel="noopener noreferrer">github.com/lokmanh-dev</a>
             <a href="https://www.linkedin.com/in/lokmanh-dev/" target="_blank" rel="noopener noreferrer">linkedin.com/in/lokmanh-dev</a>
@@ -732,23 +1001,23 @@
         </div>
         <img
           class="avatar"
-          src="https://avatars.githubusercontent.com/u/85433904?s=400&amp;u=5d9cdc5d81cb6c908fa1d1364744e54fcac54076&amp;v=4"
+          src="https://avatars.githubusercontent.com/u/85433904?s=400&amp;u=cb8e08f789a585f11bfee695787a29aa70f37089&amp;v=4"
           alt="Lokman Hossain"
-          width="100"
-          height="100"
+          width="140"
+          height="140"
           decoding="async"
         />
       </header>
 
-      <div id="panel-detail" class="cv-panel" role="tabpanel" aria-labelledby="tab-detail" hidden>
+      <div id="panel-detail" class="cv-panel" role="tabpanel" aria-labelledby="tab-detail">
       <section aria-labelledby="summary-heading">
         <h2 id="summary-heading">Profile</h2>
         <div class="prose">
           <p>
-            Results-driven Application Developer with <strong style="color:var(--text)">8+ years</strong> of experience in web development and Flutter mobile/desktop applications (Jan&nbsp;2018 – present). Strong track record leading development teams, configuring Linux servers, and designing and maintaining databases. Deep expertise in <strong style="color:var(--text)">Laravel</strong>, RESTful APIs, JavaScript, Vue.js, React, <strong style="color:var(--text)">Next.js</strong> (≈2 years at Z&nbsp;IT Solutions), and Flutter.
+            <strong style="color:var(--text)">Laravel specialist</strong> with <strong style="color:var(--text)">8+ years</strong> of <strong style="color:var(--text)">live production experience</strong> (Jan&nbsp;2018 – present): shipping and maintaining real-world systems, not just coursework. Core strengths are <strong style="color:var(--text)">Laravel</strong> &amp; <strong style="color:var(--text)">PHP</strong> backends, <strong style="color:var(--text)">Vue.js</strong> SPAs and admin UIs, and <strong style="color:var(--text)">Flutter</strong> mobile &amp; desktop apps — alongside Nuxt.js, Next.js (≈2 years at Z&nbsp;IT Solutions), React.js, RESTful APIs, Linux servers, and databases.
           </p>
           <p>
-            I build modern, responsive web experiences and e-commerce platforms, pairing clean architecture with pragmatic delivery. Problem-solving is at the core of how I work—whether shipping APIs, full-stack Laravel apps, Next.js front ends, or cross-platform Flutter clients.
+            I lead and contribute to teams delivering e‑commerce, billing, VAT, POS, and education products. Problem-solving and clean architecture drive how I work from API design through <strong style="color:var(--text)">Laravel</strong> stacks, <strong style="color:var(--text)">Vue.js</strong> front ends, and <strong style="color:var(--text)">Flutter</strong> clients.
           </p>
         </div>
       </section>
@@ -756,14 +1025,24 @@
       <section aria-labelledby="skills-heading">
         <h2 id="skills-heading">Technical expertise</h2>
         <p class="stack-lede">
-          I ship <strong>end-to-end products</strong>: robust Laravel backends and APIs, polished <strong>Next.js</strong>, Vue, and React front ends, and Flutter clients when the product needs mobile or desktop. Comfortable owning <strong>architecture, databases, and Linux deployment</strong>—from greenfield builds to scaling existing systems.
+          As a <strong>Laravel specialist</strong> with <strong>8+ years in live projects</strong>, I own <strong>Laravel</strong> &amp; <strong>PHP</strong> APIs first — then <strong>Vue.js</strong> (and Nuxt) UIs, <strong>Flutter</strong> mobile/desktop, plus Next.js / React where the stack demands it. Comfortable with <strong>architecture, databases, and Linux deployment</strong> from greenfield to scaling production systems.
         </p>
         <div class="stack-grid">
+          <div class="skill-group skill-group--wide">
+            <h3 class="skill-group-title">Primary stack</h3>
+            <div class="skills">
+              <span class="skill highlight skill-priority">Laravel</span>
+              <span class="skill highlight">PHP</span>
+              <span class="skill highlight skill-priority">Vue.js</span>
+              <span class="skill highlight">Nuxt.js</span>
+              <span class="skill highlight skill-priority">Flutter</span>
+              <span class="skill highlight">Next.js</span>
+              <span class="skill highlight">React.js</span>
+            </div>
+          </div>
           <div class="skill-group">
             <h3 class="skill-group-title">Backend &amp; APIs</h3>
             <div class="skills">
-              <span class="skill highlight">Laravel</span>
-              <span class="skill highlight">PHP</span>
               <span class="skill">REST &amp; JSON APIs</span>
               <span class="skill">MVC &amp; service layers</span>
               <span class="skill">Eloquent ORM</span>
@@ -775,9 +1054,6 @@
           <div class="skill-group">
             <h3 class="skill-group-title">Frontend &amp; full-stack</h3>
             <div class="skills">
-              <span class="skill highlight">Next.js</span>
-              <span class="skill highlight">Vue.js</span>
-              <span class="skill highlight">React</span>
               <span class="skill">Laravel + Vue</span>
               <span class="skill">Laravel + React</span>
               <span class="skill">Inertia.js</span>
@@ -790,7 +1066,6 @@
           <div class="skill-group">
             <h3 class="skill-group-title">Mobile &amp; cross-platform</h3>
             <div class="skills">
-              <span class="skill highlight">Flutter</span>
               <span class="skill">Dart</span>
               <span class="skill">Mobile &amp; desktop targets</span>
               <span class="skill">API-driven apps</span>
@@ -831,46 +1106,124 @@
             <h3>Founder &amp; CTO</h3>
             <p class="meta"><span class="company">BahariSoft IT</span> · Self-employed · Hybrid · Uttara, Dhaka</p>
             <p class="meta">Jan 2026 – Present</p>
-            <p>Leading product and engineering direction; full-stack delivery and technical strategy.</p>
+            <p>Founder-led <strong style="color:var(--text)">BahariSoft IT</strong> (early-stage): technical strategy and full-stack delivery for <strong style="color:var(--text)">multiple clients</strong> via project-based and freelance engagements.</p>
           </article>
           <article class="job">
             <h3>Senior Application Developer</h3>
             <p class="meta"><span class="company">Z IT Solutions Limited</span> · Full-time · On-site · Uttara Sector 4, Dhaka</p>
             <p class="meta">Jun 2021 – Dec 2025 · 4 yrs 7 mos</p>
             <p>Advanced application development with <strong style="color:var(--text)">Next.js</strong> (≈2 years), Laravel, and Vue; system design, APIs, and Linux-backed deployments.</p>
-            <p class="stack">Next.js · Vue.js · Laravel · Linux · REST APIs · +skills</p>
+            <p class="stack">Laravel · PHP · Vue.js · Nuxt.js · Flutter · Next.js · React.js · Linux · REST APIs · +skills</p>
           </article>
           <article class="job">
             <h3>Laravel Developer</h3>
             <p class="meta"><span class="company">2RA Technology Ltd</span> · Full-time · On-site · Mirpur DOHS, Dhaka</p>
             <p class="meta">Mar 2019 – Jun 2021 · 2 yrs 4 mos</p>
             <p>Laravel-focused backend and full-stack features with modern front ends.</p>
-            <p class="stack">Vue.js · PHP · +13 related skills</p>
+            <p class="stack">Laravel · PHP · Vue.js · JavaScript · Flutter · +related skills</p>
           </article>
           <article class="job">
-            <h3>Web Developer &amp; Graphic Designer</h3>
+            <h3>Junior Laravel Developer</h3>
             <p class="meta"><span class="company">SoftAsia BD</span> · Full-time · On-site · Bangladesh Bank More, Rangpur</p>
             <p class="meta">Jun 2018 – Jan 2019 · 8 mos</p>
-            <p>Web development and visual design for client projects.</p>
-            <p class="stack">PHP · MySQL · +5 related skills</p>
+            <p>Laravel-based features, UI work, and client delivery alongside design support.</p>
+            <p class="stack">Laravel · PHP · JavaScript · AJAX · Bootstrap · +8 related skills</p>
           </article>
           <article class="job">
-            <h3>Web Designer</h3>
+            <h3>PHP Developer</h3>
             <p class="meta"><span class="company">ZS TECHNOLOGIES LTD</span> · Full-time · On-site · Rangpur Division</p>
             <p class="meta">Jan 2018 – May 2018 · 5 mos</p>
-            <p>Web design and development foundations.</p>
-            <p class="stack">PHP · MySQL · +1 skill</p>
+            <p>PHP development and database-backed web foundations.</p>
+            <p class="stack">PHP · MySQL · +5 related skills</p>
           </article>
         </div>
       </section>
+
+      <section aria-labelledby="portfolio-heading">
+        <h2 id="portfolio-heading">Portfolio &amp; product experience</h2>
+        <p class="portfolio-lede">
+          As a <strong>Laravel specialist</strong>, I’ve delivered these <strong>business systems</strong> end-to-end — with <strong>Vue.js</strong> and <strong>Flutter</strong> where the product needs web or mobile/desktop — focused on operations, compliance, and scale.
+        </p>
+        <ul class="portfolio-grid">
+          <li class="portfolio-card">
+            <span class="portfolio-accent" aria-hidden="true"></span>
+            <div>
+              <h3 class="portfolio-title">POS &amp; inventory</h3>
+              <p class="portfolio-desc">Retail point of sale with live stock, multi-branch inventory, purchases, and sales analytics.</p>
+              <div class="portfolio-tags">
+                <span class="portfolio-tag">Laravel</span>
+                <span class="portfolio-tag">Real-time stock</span>
+              </div>
+            </div>
+          </li>
+          <li class="portfolio-card">
+            <span class="portfolio-accent" aria-hidden="true"></span>
+            <div>
+              <h3 class="portfolio-title">E‑commerce platform</h3>
+              <p class="portfolio-desc">Product catalog, cart &amp; checkout, order workflow, payments, and merchant admin dashboards.</p>
+              <div class="portfolio-tags">
+                <span class="portfolio-tag">Vue / React</span>
+                <span class="portfolio-tag">Payments</span>
+              </div>
+            </div>
+          </li>
+          <li class="portfolio-card">
+            <span class="portfolio-accent" aria-hidden="true"></span>
+            <div>
+              <h3 class="portfolio-title">Online billing software</h3>
+              <p class="portfolio-desc">Cloud-ready invoicing and subscriptions: client portals, online payments, recurring billing, ledgers, and financial summaries. Includes a <strong style="color:var(--text)">mobile payment system</strong> on <strong style="color:var(--text)">Google Play</strong>.</p>
+              <div class="portfolio-tags">
+                <span class="portfolio-tag">SaaS-style</span>
+                <span class="portfolio-tag">Google Play</span>
+                <span class="portfolio-tag">APIs</span>
+              </div>
+            </div>
+          </li>
+          <li class="portfolio-card">
+            <span class="portfolio-accent" aria-hidden="true"></span>
+            <div>
+              <h3 class="portfolio-title">VAT management system</h3>
+              <p class="portfolio-desc">VAT calculation, return preparation, ledger views, and audit-friendly compliance reporting.</p>
+              <div class="portfolio-tags">
+                <span class="portfolio-tag">Compliance</span>
+                <span class="portfolio-tag">Finance</span>
+              </div>
+            </div>
+          </li>
+          <li class="portfolio-card">
+            <span class="portfolio-accent" aria-hidden="true"></span>
+            <div>
+              <h3 class="portfolio-title">School management software</h3>
+              <p class="portfolio-desc"><strong style="color:var(--text)">Multi-tenant</strong> architecture: separate schools on one platform. Students &amp; classes, fees &amp; billing, attendance, academics, and parent/staff portals.</p>
+              <div class="portfolio-tags">
+                <span class="portfolio-tag">Multi-tenancy</span>
+                <span class="portfolio-tag">Multi-role</span>
+                <span class="portfolio-tag">Portals</span>
+              </div>
+            </div>
+          </li>
+          <li class="portfolio-card">
+            <span class="portfolio-accent" aria-hidden="true"></span>
+            <div>
+              <h3 class="portfolio-title">Park &amp; restaurant management</h3>
+              <p class="portfolio-desc">Operations for parks and F&amp;B: bookings, tables, menus, staff, and reporting — delivered as <strong style="color:var(--text)">Flutter</strong> mobile apps and desktop clients backed by robust APIs.</p>
+              <div class="portfolio-tags">
+                <span class="portfolio-tag">Flutter mobile</span>
+                <span class="portfolio-tag">Flutter desktop</span>
+                <span class="portfolio-tag">Cross-platform</span>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </section>
       </div>
 
-      <div id="panel-short" class="cv-panel" role="tabpanel" aria-labelledby="tab-short">
+      <div id="panel-short" class="cv-panel" role="tabpanel" aria-labelledby="tab-short" hidden>
         <section aria-labelledby="summary-heading-short">
           <h2 id="summary-heading-short">Profile</h2>
           <div class="prose">
             <p>
-              Senior developer (8+ yrs): <strong style="color:var(--text)">Laravel</strong> &amp; APIs, <strong style="color:var(--text)">Next.js</strong> (~2 yrs at Z&nbsp;IT), Vue/React, <strong style="color:var(--text)">Flutter</strong>, MySQL/PostgreSQL, Linux. Technical leadership, e‑commerce &amp; business apps.
+              <strong style="color:var(--text)">Laravel specialist</strong> — <strong style="color:var(--text)">8+ yrs live projects</strong>. Core: <strong style="color:var(--text)">Laravel</strong>, <strong style="color:var(--text)">Vue.js</strong>, <strong style="color:var(--text)">Flutter</strong>; also PHP, Nuxt, Next/React (≈2 yrs Next at Z&nbsp;IT), MySQL/PostgreSQL, Linux. Leadership, e‑commerce &amp; business systems.
             </p>
           </div>
         </section>
@@ -878,12 +1231,13 @@
         <section aria-labelledby="skills-heading-short">
           <h2 id="skills-heading-short">Skills</h2>
           <div class="skills">
-            <span class="skill highlight">Laravel</span>
-            <span class="skill highlight">Next.js</span>
+            <span class="skill highlight skill-priority">Laravel</span>
             <span class="skill highlight">PHP</span>
-            <span class="skill highlight">Vue.js</span>
-            <span class="skill highlight">React</span>
-            <span class="skill highlight">Flutter</span>
+            <span class="skill highlight skill-priority">Vue.js</span>
+            <span class="skill highlight">Nuxt.js</span>
+            <span class="skill highlight skill-priority">Flutter</span>
+            <span class="skill highlight">Next.js</span>
+            <span class="skill highlight">React.js</span>
             <span class="skill">REST APIs</span>
             <span class="skill">TypeScript / JS</span>
             <span class="skill">MySQL · PostgreSQL</span>
@@ -893,13 +1247,25 @@
           </div>
         </section>
 
+        <section aria-labelledby="portfolio-heading-short">
+          <h2 id="portfolio-heading-short">Portfolio</h2>
+          <ul class="portfolio-list-short">
+            <li><strong style="color:var(--text)">POS &amp; inventory</strong> — sales, stock, branches, reporting</li>
+            <li><strong style="color:var(--text)">E‑commerce</strong> — catalog, checkout, orders, admin</li>
+            <li><strong style="color:var(--text)">Online billing</strong> — cloud invoicing; mobile payments (Google Play)</li>
+            <li><strong style="color:var(--text)">VAT management</strong> — returns, compliance reporting</li>
+            <li><strong style="color:var(--text)">School management</strong> — multi-tenancy; students, fees, attendance, portals</li>
+            <li><strong style="color:var(--text)">Park &amp; restaurant</strong> — Flutter mobile &amp; desktop; ops &amp; reporting</li>
+          </ul>
+        </section>
+
         <section aria-labelledby="exp-heading-short">
           <h2 id="exp-heading-short">Experience</h2>
           <div class="timeline">
             <article class="job job--compact">
               <h3>Founder &amp; CTO — BahariSoft IT</h3>
               <p class="meta">Jan 2026 – Present · Dhaka · Hybrid</p>
-              <p class="job-one-liner">Product &amp; engineering leadership; full-stack delivery.</p>
+              <p class="job-one-liner">Early-stage studio · multi-client freelance &amp; project work · full-stack delivery.</p>
             </article>
             <article class="job job--compact">
               <h3>Senior Application Developer — Z IT Solutions</h3>
@@ -909,17 +1275,17 @@
             <article class="job job--compact">
               <h3>Laravel Developer — 2RA Technology</h3>
               <p class="meta">Mar 2019 – Jun 2021 (2 yrs 4 mos) · Dhaka</p>
-              <p class="job-one-liner">Laravel backends, Vue, full-stack features.</p>
+              <p class="job-one-liner">Laravel · PHP · Vue.js · JavaScript · Flutter · +skills</p>
             </article>
             <article class="job job--compact">
-              <h3>Web Developer &amp; Designer — SoftAsia BD</h3>
+              <h3>Junior Laravel Developer — SoftAsia BD</h3>
               <p class="meta">Jun 2018 – Jan 2019 · Rangpur</p>
-              <p class="job-one-liner">PHP, MySQL, client web &amp; design work.</p>
+              <p class="job-one-liner">Laravel · PHP · JavaScript · AJAX · Bootstrap · +8 related skills</p>
             </article>
             <article class="job job--compact">
-              <h3>Web Designer — ZS TECHNOLOGIES</h3>
+              <h3>PHP Developer — ZS TECHNOLOGIES</h3>
               <p class="meta">Jan 2018 – May 2018 · Rangpur</p>
-              <p class="job-one-liner">PHP, MySQL, web foundations.</p>
+              <p class="job-one-liner">PHP · MySQL · +5 related skills</p>
             </article>
           </div>
         </section>
